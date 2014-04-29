@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Almacenamiento NAS</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div id="cabecera" style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Fundamentos de Hardware</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Almacenamiento NAS</i></li>
+    <li><b>Componentes del grupo:</b> <i>Iván José Hernández Regalado</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>1 de Mayo de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div align="center"style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<p><a href='#bloque1'><b>1.FreeNAS</b></a> | <a href='#bloque2'><b>2.Creación carpetas compartidas</b></a></p>
+</div>
+<div style='float:right;bottom:10px;right:10px;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;position:fixed'>
+<p align="center" ><a href='#cabecera'><b>Cabecera</b></a></p>
+</div>
+<h2>Preparación MV</h2>
+<p>
+Antes de comenzar con la instalación del FreeNAS creamos una máquina virtual tipo BSD 64 bits con 2 discos duros extras de 2GB cada uno.<br/>
+<img width="600px" height="500px"src='./files/1.png'/><br/>
+<img width="600px" height="500px"src='./files/2.png'/><br/>
+<img width="600px" height="500px"src='./files/4.png'/><br/>
+</p>
+<h1><a id='bloque1'>1.FreeNAS</a></h1>
+<h2>1.1 Instalación</h2>
+<p>
+	<ol type="I"><li>Tras terminar con la preparación iniciamos la iso para comenzar la instalación y vamos a Install/Upgrade to hard
+	drive/flash device, etc.<br/><br/>
+	<img width="600px" height="500px" src='./files/5.png'/></li><br/>
+	<li>Luego elegimos el disco donde queremos instalarlo.<br/><br/>
+	<img width="600px" height="500px" src='./files/6.png'/>
+	<img width="600px" height="500px" src='./files/8.png'/></li><br/>
+	</ol>
+</p>
+<h2>1.2 Configurar FreeNAS</h2>
+<p>
+	<img width="600px" height="500px"src='./files/9.png'/>
+	<ol type="I">
+	<li>Empezamos con la opcion 1 y ponemos lo siguiente:<br/><br/>
+	<img src='./files/14.png'/></li><br/>
+	<li>Luego vamos a la opcion 4 y ponemos lo siguiente:<br/><br/>
+	<img src='./files/11.png'/></li><br/>
+	<li>Seguimos con la opcion 5 y ponemos lo siguiente:<br/><br/>
+	<img src='./files/13.png'/></li><br/>
+	<li>Terminamos con la opcion 6 y ponemos lo siguiente:<br/><br/>
+	<img src='./files/10.png'/></li><br/>
+	<li>Ahora miramos si con el ifconfig y mandando un ping está configurado correctamente:<br/><br/>
+	<img src='./files/15.png'/></li><br/>
+	</ol>
+</p>
+<h1><a id='bloque2'>2.Creación carpetas compartidas</a></h1>
+<p>
+	<ol type="I">
+	<li>Para comenzar vamos a crear un volumen a partir de los 2 discos en la pestaña de storage. Le ponemos el nombre que queramos y tiene que ser
+	de tipo mirror y que se monte en /mnt/datos1.
+	<br/><br/>
+	<img src='./files/16.png'/></li><br/>
+	<li>Luego vamos a services y activamos el CIFS.<br/><br/>
+	<img width="600px" height="500px"src='./files/17.png'/></li><br/>
+	<li>Añadimos la carpeta y su nombre por último.<br/><br/>
+	<img width="600px" height="500px"src='./files/18.png'/></li><br/>
+	<li>Para que podamos escribir en la carpeta compartida debemos desde la máquina FreeNAS e ir a la carpeta y crear una carpeta con
+	permisos 777.<br/><br/>
+	<img width="600px" height="500px"src='./files/20.png'/></li><br/>
+	<li>Comprobar que podemos añadir carpetas y no nos da errores.<br/><br/>
+	<img width="600px" height="500px"src='./files/21.png'/>
+	<img width="600px" height="500px"src='./files/22.png'/><br/>
+	</ol>
+</p>
+</body>
+</html>
