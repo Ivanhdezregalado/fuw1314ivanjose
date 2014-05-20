@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Control remoto</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div id="cabecera" style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Fundamentos de Hardware</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Control remoto</i></li>
+    <li><b>Componentes del grupo:</b> <i>Iván José Hernández Regalado</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>20 de Mayo de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div align="center" style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalar italc master</a> | <a href='#bloque2'>Instalar italc cliente en Windows</a>
+| <a href='#bloque3'>Instalar italc cliente en Linux</a> | <a href='#bloque4'>Comprobación</a></div>
+
+<div style='float:right;bottom:10px;right:10px;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;position:fixed'>
+<p align="center" ><a href='#cabecera'><b>Cabecera</b></a></p>
+</div>
+<h3>Preparación MV</h3>
+<p>Primero que nada establecemos IP's estáticas a nuestras MV's.</p>
+<img width="600px" height="500px"src='./files/1.png'/><img width="600px" height="500px"src='./files/2.png'/><br/><br/>
+<h1><a id='bloque1'>Instalar italc master</a></h1>
+<ol type="I">
+<li><p>Empezamos instalando el italc-master en una MV que será la que llevará el control de las demás.</i></p>
+<img width="600px" height="500px"src='./files/3.png'/><br/><br/></li>
+<li>Luego tenemos que ejecutar el siguiente comando para que se creen unos ficheros llamados keys para usarlos más adelante.<br/><br/>
+<img width="600px" height="500px"src='./files/4.png'/><br/><br/>
+</p></li>
+<li>Ahora creamos el grupo italc y añadimos nuestro usuario al grupo.<br/><br/>
+<img src='./files/5.png'/><br/><br/></li>
+<li>Con el siguiente comando damos permisos a los usuarios del grupo italc para que tengan acceso a las keys.<br/><br/>
+<img src='./files/6.png'/><br/><br/></li>
+<li>Verificamos que el servicio esta iniciado. Si no está iniciado ejecutar el comando "/usr/bin/ica &" para iniciarlo.<br/><br/>
+<img width="600px" height="500px"src='./files/7.png'/><br/><br/></li>
+<li>Para terminar al final del fichero ".profile" del usuario que se encuentra en su home añadimos la siguiente linea al final para que
+se inicie automaticamente el servicio italc al inicio del sistema: "/usr/bin/ica &".<br/><br/>
+<img width="600px" height="500px"src='./files/8.png'/><br/><br/></li>
+</ol>
+<hr/>
+<h1><a id='bloque2'>Instalar italc cliente en Windows</a></h1>
+<ol type="I">
+<li><p>Primero nos descargamos el italc cliente de alguna página web segura y procedemos con la instalación.</p>
+<img width="600px" height="500px"src='./files/9.png'/><br/><br/></li>
+<li><p>Para llevar la instalación con éxito debemos copiar la "key" del public del master para que el instalador de Windows nos la coja. Para ello cambiamos 
+el nombre de la "key" por "italc_dsa_key.pub"</p>
+<img width="600px" height="500px"src='./files/10.png'/><img width="600px" height="500px"src='./files/11.png'/><br/><br/>
+<img width="600px" height="500px"src='./files/12.png'/><img width="600px" height="500px"src='./files/13.png'/><br/><br/></li>
+<li><p>Finalmente, comprobamos que está iniciado el servicio.</p>
+<img width="600px" height="500px"src='./files/15.png'/><br/><br/></li>
+<li><p>Desactivamos el firewall por si hubieran problemas de conexión entre las MV. Y le proporcionamos al programa italc cliente permisos.</p>
+<img width="600px" height="500px"src='./files/24.png'/><img width="600px" height="500px"src='./files/25.png'/><br/><br/>
+<img width="600px" height="500px"src='./files/26.png'/><img width="600px" height="500px"src='./files/27.png'/><br/><br/></li>
+</ol>
+<hr/>
+<h1><a id='bloque3'>Instalar italc cliente en Linux</a></h1>
+<ol type="I">
+<li><p>Empezamos la instalación del cliente el una MV debian.</p>
+<img src='./files/18.png'/><br/><br/></li>
+<li><p>Luego creamos el grupo italc y añadimos el usuario al grupo.</p>
+<img src='./files/19.png'/><br/><br/></li>
+<li><p>Ahora pasamos la "key" del master al cliente.</p>
+<img src='./files/20.png'/><img src='./files/21.png'/><br/><br/></li>
+<li><p>Le ponemos permisos al grupo italc para acceder a las keys.</p>
+<img src='./files/22.png'/><br/><br/></li>
+<li>Para terminar al final del fichero ".profile" del usuario que se encuentra en su home añadimos la siguiente linea al final para que
+se inicie automaticamente el servicio italc al inicio del sistema: "/usr/bin/ica &".<br/><br/>
+<img width="600px" height="500px"src='./files/8.png'/><br/><br/></li>
+</ol>
+<hr/>
+<h1><a id='bloque4'>Comprobación</a></h1>
+<ol type="I">
+<li><p>Para finalizar vamos a la MV master y abrimos el italc.</p>
+<img width="600px" height="500px"src='./files/16.png'/><br/><br/></li>
+<li><p>Luego añadimos una clase, y ordenadores indicando su dirección IP. Tras ésto vemos que la MV debian cliente se ve perfectamente y la 
+podemos controlar.</p>
+<img width="600px" height="500px"src='./files/17.png'/><img width="600px" height="500px"src='./files/23.png'/><br/><br/></li>
+<p>Hay un problema con el italc de Windows que se ve la pantalla en negro, buscando información he visto que es un problema de debian siendo
+el master. <br/>Pero funciona ya que desde el master puedo apagar la MV Windows.</p>
+</ol>
+<hr/>
+</body>
+</html>
