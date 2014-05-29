@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+	<title>Raspberry Pi</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div id="cabecera" style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Fundamentos de Hardware</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Raspberry Pi</i></li>
+    <li><b>Componentes del grupo:</b> <i>Iván José Hernández Regalado</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>31 de Mayo de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div align="center" style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Descarga del sistema</a> | <a href='#bloque2'>Botear la tarjeta SD</a>
+| <a href='#bloque3'>Raspberry</a> | <a href='#bloque4'>Configuración del SO</a></div>
+
+<div style='float:right;bottom:10px;right:10px;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;position:fixed'>
+<p align="center" ><a href='#cabecera'><b>Cabecera</b></a></p>
+</div>
+
+<h1><a id='bloque1'>Descarga del sistema</a></h1>
+<ol type="I">
+<li><p>Vamos a la página oficial de la Raspberry para descargar un sistema operativo.</p>
+<img width="600px" height="500px"src='./files/1.png'/><br/><br/></li>
+<li>Luego descomprimimos el zip para tener la imagen a mano mas tarde.<br/><br/>
+</li>
+</ol>
+<hr/>
+<h1><a id='bloque2'>Botear la tarjeta SD</a></h1>
+<ol type="I">
+<li><p>Nos descargamos el programa Win32DiskImager para pasar la iso a la SD y que la Raspberry la ejecute.</p>
+</li>
+<li><p>Luego ejecutamos el programa y ponemos la SD en el adaptador SD-USB para que el programa nos convierta la SD en un boteable con la iso
+dentro.</p>
+<img width="600px" height="500px"src='./files/2.png'/><img width="600px" height="500px"src='./files/3.jpg'/><br/><br/></li>
+</ol>
+<h3>NOTA: cuidado con la SD no todas son compatibles para instalar en la Raspberry, aqui dejo un link con las SD compatibles y
+no compatibles para evitar problemas. <a href="http://elinux.org/RPi_SD_cards">SD's ompatibles y no compatibles</a></h3>
+<hr/>
+<h1><a id='bloque3'>Raspberry</a></h1>
+<ol type="I">
+<li><p>Empezamos poniendo la Raspberry con su carcasa.</p>
+<img width="600px" height="500px" src='./files/4.jpg'/><img width="600px" height="500px" src='./files/5.jpg'/><br/><br/></li>
+<li><p>Luego la conectamos a la tele mediante el cable HDMI, la conectamos a la corriente, le ponemos la SD, un teclado y ratón USB.</p>
+<img width="600px" height="500px" src='./files/6.jpg'/><br/><br/></li>
+</ol>
+<hr/>
+<h1><a id='bloque4'>Configuración del SO</a></h1>
+<ol type="I">
+<li><p>Para empezar entramos como root y la contraseña root para configurar el sistema operativo y ejecutamos el comando 
+"mv /boot/config.txt /boot/config.old" y "reboot".</p>
+<img width="600px" height="500px"src='./files/7.jpg'/><br/><br/></li>
+<li><p>Luego le cambiamos la contraseña al root.</p>
+<img width="600px" height="500px"src='./files/8.jpg'/><br/><br/></li>
+<li><p>Buscamos nuestra zona horaria y hacemos un link simbolico en /etc/localtime.</p>
+<img width="600px" height="500px"src='./files/9.jpg'/><br/><br/></li>
+<li><p>Miramos como está organizado nuestro sistema.</p>
+<img width="600px" height="500px"src='./files/12.jpg'/><br/><br/></li>
+<li><p>Creamos pacman que es nuestro actualizador con los siguientes comandos.</p>
+<img width="600px" height="500px"src='./files/14.jpg'/><br/><br/></li>
+<li><p>Creamos un usuario llamado pi con contraseña profesor.</p>
+<img width="600px" height="500px"src='./files/16.jpg'/><img width="600px" height="500px"src='./files/17.jpg'/><br/>
+<img width="600px" height="500px"src='./files/18.jpg'/><br/><br/></li>
+<li><p>Por último miramos la MAC de nuestra Raspberry y la apuntamos en la carcasa.</p>
+<img width="600px" height="500px"src='./files/19.jpg'/><br/><br/></li>
+</ol>
+<hr/>
+</body>
+</html>
